@@ -19,7 +19,7 @@ router.get('/order', function(req, res, next) {
 });
 /* GET About page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About' });
+  res.render('about', { title: 'About' });
 });
 /* GET contact us page. */
 router.get('/contactus', function(req, res, next) {

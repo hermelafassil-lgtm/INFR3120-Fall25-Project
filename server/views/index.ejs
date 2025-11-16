@@ -1,11 +1,16 @@
+<!-- Includes the site Header -->
 <%-include ./partials/header.ejs %>
+<!-- Includes the site main navagation -->
 <%-include ./partials/main_nav.ejs %>
+<!-- Makes sure the code only shows up in the home page -->
 <% if (title === 'Home') { %>
   
-
+<!-- Css style specific to the Home page -->
 <style>
+  /*Scroll bar */
   html { scroll-behavior: smooth; }
 
+  /* Controles the html body for the height*/
   html, body {
     height: auto !important;
     min-height: auto !important;
@@ -13,9 +18,11 @@
     overflow-x: hidden !important;
   }
 
+  /* Sets the padding to 90px */
   body {
     padding-bottom: 90px;  
   }
+  /*Styling for the home card */
   .home-card {
     border-radius: 200px;
     background: linear-gradient(135deg, #158808, #fff);
@@ -26,6 +33,7 @@
     border: 0;
   }
 
+  /*Styling for the home imagee*/
   .home-card img {
     width: 350px;
     height: 160px;
@@ -37,29 +45,33 @@
   }
 </style>
 
+  <!-- Hero card on the top of the pagecenters the text -->
   <div class="d-flex justify-content-center mt-3 mb-3">
     <div class="card text-center home-card">
+        <!--Image for the Casa Di pasta -->
       <img src="/Asset/images/Casa_Di_pasta.png"
-           alt="Everything Fresh, Truly Italian">
-
+        alt="Everything Fresh, Truly Italian">
+      <!-- Size two Heading for the slogan  -->
       <h2 class="mt-3 mb-0 text-light">Everything Fresh, Truly Italian</h2>
-
+        <!--Sets the color and size -->
       <div class="mt-3 mb-3 text-light text-start" style="max-width:300px; margin:0 auto;">
         <p class="d-flex align-items-center mb-0">
+            <!--Link to the location sign and path adress -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" class="me-2 Location-icon">
             <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+            <!--Resturant location -->
           </svg>
           Ontario, Oshawa, Canada
         </p>
       </div>
-
+      <!-- Button that takes the user down to the top selling pastas -->
       <div class="mb-1">
         <a href="#section1" class="btn btn-sm btn-outline-light me-2">Top selling pasta</a>
       </div>
     </div>
   </div>
 
-
+<!-- Section and containter for the top selling pastas -->
 <section id="section1" class="container">
   <h3>Top selling Pastas !!!</h3>
   
@@ -67,12 +79,15 @@
   <div class="row justify-content-center g-4">
     <div class="col-md-3">
       <div class="card">
+          <!-- Image to the Linguine vong-->
         <img src="/Asset/images/linguine_vongo.webp" class="card-img-top"
         class="card-img-top"
         alt="">
         <div class="card-body">
           <i class="fa-regular fa-globe-pointer"></i>
+          <!-- Title and Price for the pasta -->
           <h5 class="card-title">Linguine vongo</h5>
+          <!-- Price for the Spaghetti Carbonara-->
           <p class="card-text">$13.99</p>
         </div>
       </div>
@@ -81,13 +96,16 @@
 
     <div class="col-md-3">
       <div class="card">
+        <!-- Image to the Potata Gnocchi -->
         <img src="/Asset/images/potato_gnocchi.png" class="card-img-top"
         class="card-img-top"
         alt="">
         <div class="card-body">
           <i class="fa-regular fa-globe-pointer"></i>
+          <!-- Title and Price for the Potato Gnocchi  -->
           <h5 class="card-title">Potato Gnocchi</h5>
-          <p class="card-text">$12.99</p>
+          <!-- Price for the Spaghetti Carbonara-->
+         <p class="card-text">$12.99</p>
         </div>
       </div>
     </div>
@@ -95,18 +113,23 @@
 
     <div class="col-md-3">
       <div class="card">
+        <!-- Image to the Spaghetti Carbonara -->
         <img src="/Asset/images/spaghetti_carbonara.png" class="card-img-top"
         class="card-img-top"
         alt="">
         <div class="card-body">
           <i class="fa-regular fa-globe-pointer"></i>
-          <h5 class="card-title">Linguine Vongo</h5>
+          <!-- Image to the Spaghetti Carbonara-->
+          <h5 class="card-title">Spaghetti Carbonara</h5>
+          <!-- Price for the Spaghetti Carbonara-->
           <p class="card-text">$13.99</p>
         </div>
       </div>
     </div>
-
+  
+  <!-- Sets the size for the order button-->
   <div class="mt-3 text-end">
+    <!--  Order button-->
     <a href="/order" class="small-button">Place Order</a>
   </div>
 </section>
@@ -123,7 +146,8 @@
   display: inline-block;
 }
 </style>
+<!--Closes the hompage -->
 <% } %>
-
+<!-- Includes the footer-->
 <%-include ./partials/footer.ejs %>
 

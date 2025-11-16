@@ -1,0 +1,141 @@
+<!-- Includes the site Header -->
+<%-include ./partials/header.ejs %>
+<!-- Includes the site main navagation -->
+<%-include ./partials/main_nav.ejs %>
+<!-- Makes sure the code only shows up in the About page -->
+<% if (title === 'About') { %>
+
+<!-- size 1 heading for the title About Casa Di Pasta  -->
+<h1 class="text-center mt-4 mb-4">About Casa Di Pasta </h1>
+<!--  -->
+<!-- Css style Specific to the ABOUT page -->
+<style>
+  html { scroll-behavior: smooth; }
+  /* Controls the html body for the height*/
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Sets the padding to 90px*/
+  body {
+    padding-bottom: 90px;  
+  }
+    /*Styling for the home card */
+  .home-card {
+    border-radius: 200px;
+    background: linear-gradient(135deg, #158808, #ab0606);
+    width: 600px;
+    padding: 30px;
+    color: #d70000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border: 0;
+  }
+  /*Styling for the home card image  */
+  .home-card img {
+    width: 350px;
+    height: 160px;
+    object-fit: cover;
+    border: 10px solid black;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+  <!-- Hero card on the top of the page centers the text -->
+  <div class="d-flex justify-content-center mt-3 mb-3">
+    <div class="card text-center home-card">
+     <!--Image for the Casa Di pasta -->
+      <img src="/Asset/images/Casa_Di_pasta.png"
+           alt="Everything Fresh, Truly Italian">
+      <!-- Size two Heading for the slogan  -->
+      <h2 class="mt-3 mb-0 text-light">Everything Fresh, Truly Italian</h2>
+      <!-- Size two Heading for the mission statment  -->
+      <h5 class="mt-3 mb-0 text-light">In house authentic italian dishes</h5>
+      <!--Sets the color and size -->
+      <div class="mt-3 mb-3 text-light text-start" style="max-width:300px; margin:0 auto;">
+        <p class="d-flex align-items-center mb-0">
+          <!--Link to the location sign and path adress -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" class="me-2 Location-icon">
+            <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+          </svg>
+          <!--Resturant location -->
+          Ontario, Oshawa, Canada
+        </p>
+      </div>
+     <!-- Button to the google maps location -->
+      <div class="mb-1">
+        <a href="https://www.google.com/maps/place/2000+Simcoe+St+N,+Oshawa,+ON+L1H+7K4/data=!4m2!3m1!1s0x89d51b8e271c4e61:0xb17dbf5319f89dc7?sa=X&ved=1t:242&ictx=111" 
+        class="btn btn-sm btn-outline-light me-2">Where to find us </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+<div class="container my-5">
+
+
+
+<section id="section1" class="container">
+
+ <!-- Size 3 heading for our story-->
+  <h3 class="mb-3">Our Story</h3>
+
+  <p class="mb-5">
+    Casa Di Pasta was founded in 1998 by a group of pasta enthusiasts who enjoyed crafting traditional Italian dishes.
+    They Open a small restaurant in Downtown Oshawa with the emphasis of using fresh ingredients and authentic recipes passed down through generations.
+    Having been in the industry for over 25 years, Casa Di Pasta Has become a staple in the Oshawa community. 
+    Over the years, our menu and memebers have grown tremendously and so has our commitment to serving fresh high quality Italian dishes.
+  </p>
+
+   <!-- Size 3 heading for the Restaurant founders-->
+  <h3 class="mb-3 mt-4">Restaurants  Founders</h3>
+
+  <p class="mb-5">
+At Casa Di Pasta, our mission is to provide our customers with an authentic Italian dining experience that celebrates the rich culinary heritage of Italy.
+ We are committed to using only the freshest ingredients, traditional recipes, and time-honored cooking techniques to create dishes that are both delicious and memorable.
+  Our goal is to create a warm and welcoming atmosphere where guests can enjoy exceptional food, excellent service, and a true taste of Italy
+  </p>
+
+
+</section>
+
+<!-- Size 3 heading for Meet the team-->
+<h3 class="mt-5">Meet the Team</h3>
+<!-- List of our members and their roles-->
+<p class="mb-5">
+Hermela Assefa - Head Chef <br>
+Hirosan Ravichandran - Sous Chef <br>
+Kanth Monathen - Restaurant Manager <br>
+</p>
+
+
+<section id="section1" class="container">
+
+  <!-- Sets the size for the order button-->
+  <div class="mt-3 text-end">
+    <!--  Order button-->
+    <a href="/order" class="small-button">Place Order</a>
+  </div>
+<style>
+.small-button {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+</style>
+<!--Closes the hompage -->
+<% } %>
+<!-- Includes the footer-->
+<%-include ./partials/footer.ejs %>

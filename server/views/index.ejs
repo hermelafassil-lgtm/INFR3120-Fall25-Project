@@ -1,5 +1,129 @@
 <%-include ./partials/header.ejs %>
 <%-include ./partials/main_nav.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %> page</p>
+<% if (title === 'Home') { %>
+  
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    padding-bottom: 90px;  
+  }
+  .home-card {
+    border-radius: 200px;
+    background: linear-gradient(135deg, #158808, #fff);
+    width: 600px;
+    padding: 30px;
+    color: #d70000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border: 0;
+  }
+
+  .home-card img {
+    width: 350px;
+    height: 160px;
+    object-fit: cover;
+    border: 10px solid black;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
+  <div class="d-flex justify-content-center mt-3 mb-3">
+    <div class="card text-center home-card">
+      <img src="/Asset/images/Casa_Di_pasta.png"
+           alt="Everything Fresh, Truly Italian">
+
+      <h2 class="mt-3 mb-0 text-light">Everything Fresh, Truly Italian</h2>
+
+      <div class="mt-3 mb-3 text-light text-start" style="max-width:300px; margin:0 auto;">
+        <p class="d-flex align-items-center mb-0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" class="me-2 Location-icon">
+            <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+          </svg>
+          Ontario, Oshawa, Canada
+        </p>
+      </div>
+
+      <div class="mb-1">
+        <a href="#section1" class="btn btn-sm btn-outline-light me-2">Top selling pasta</a>
+      </div>
+    </div>
+  </div>
+
+
+<section id="section1" class="container">
+  <h3>Top selling Pastas !!!</h3>
+  
+<div class="container my-5">
+  <div class="row justify-content-center g-4">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="/Asset/images/linguine_vongo.webp" class="card-img-top"
+        class="card-img-top"
+        alt="">
+        <div class="card-body">
+          <i class="fa-regular fa-globe-pointer"></i>
+          <h5 class="card-title">Linguine vongo</h5>
+          <p class="card-text">$13.99</p>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="col-md-3">
+      <div class="card">
+        <img src="/Asset/images/potato_gnocchi.png" class="card-img-top"
+        class="card-img-top"
+        alt="">
+        <div class="card-body">
+          <i class="fa-regular fa-globe-pointer"></i>
+          <h5 class="card-title">Potato Gnocchi</h5>
+          <p class="card-text">$12.99</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3">
+      <div class="card">
+        <img src="/Asset/images/spaghetti_carbonara.png" class="card-img-top"
+        class="card-img-top"
+        alt="">
+        <div class="card-body">
+          <i class="fa-regular fa-globe-pointer"></i>
+          <h5 class="card-title">Linguine Vongo</h5>
+          <p class="card-text">$13.99</p>
+        </div>
+      </div>
+    </div>
+
+  <div class="mt-3 text-end">
+    <a href="/order" class="small-button">Place Order</a>
+  </div>
+</section>
+<style>
+.small-button {
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+</style>
+<% } %>
+
 <%-include ./partials/footer.ejs %>
+

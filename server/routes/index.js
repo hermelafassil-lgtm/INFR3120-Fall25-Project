@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 /* GET services page. */
 router.get('/order', function(req, res, next) {
-  res.render('index', { title: 'Order' });
+  res.render('order', { title: 'Order' });
 });
 /* GET About page. */
 router.get('/about', function(req, res, next) {

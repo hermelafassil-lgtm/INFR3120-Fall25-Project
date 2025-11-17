@@ -1,0 +1,47 @@
+<!-- Includes the site Header -->
+<%-include ./partials/header.ejs %>
+<!-- Includes the site main navagation -->
+<%-include ./partials/main_nav.ejs %>
+<% if (title === 'Order') { %>
+<h1><%= title %> - Place an Order</h1>
+
+<form action="mailto:rishikanth.manotheepan@ontariotechu.net" method="POST" enctype="text/plain" style="max-width:400px;margin:auto;">
+    <div>
+        <label>Choose your dish:</label>
+        <div style="display:flex; gap: 16px; justify-content:space-between; margin: 8px 0;">
+            <label>
+                <input type="radio" name="dish" value="Pasta A" required> Pasta A
+            </label>
+            <label>
+                <input type="radio" name="dish" value="Pasta B"> Pasta B
+            </label>
+            <label>
+                <input type="radio" name="dish" value="Pasta C"> Pasta C
+            </label>
+        </div>
+    </div>
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" required>
+    </div>
+    <div>
+        <label for="instructions">Special Instructions:</label>
+        <textarea name="instructions" id="instructions" rows="2"></textarea>
+    </div>
+    <div>
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+    </div>
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" name="phone" id="phone" required>
+    </div>
+    <button type="submit">Place Order</button>
+    <input type="reset" value="Reset All" />
+</form>
+<% } %>
+<%-include ./partials/footer.ejs %>

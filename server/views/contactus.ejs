@@ -4,9 +4,6 @@
 <!-- Includes the site main navigation -->
 <%-include ./partials/main_nav.ejs %>
 
-<!-- Makes sure the code only shows up on the Contact page -->
-<% if (title === 'Contact us') { %>
-
 <!-- Css style specific to the Contact page -->
 <style>
   html { scroll-behavior: smooth; }
@@ -156,7 +153,7 @@
   </div>
 </div>
 
-<% } %>
+
 
 <!-- Includes the footer -->
 <%-include ./partials/footer.ejs %>

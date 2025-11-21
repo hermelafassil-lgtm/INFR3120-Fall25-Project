@@ -1,54 +1,56 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Casa Di Pasta</a>
-      <img src="/Asset/images/Casa_Di_pasta.png" alt="Logo" style="height:35px;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="/Asset/images/Casa_Di_pasta.png" alt="Logo" style="height:35px;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto ms-2 mb-lg-0">
 
-        <li class="nav-item">
-          <% if (title == "Home") { %>
-          <a class="nav-link active" aria-current="page" href="/home"><i class="fa-solid fa-lg fa-house"></i> Home</a>
-          <% } else { %>
-            <a class="nav-link" aria-current="page" href="/home"><i class="fa-solid fa-lg fa-house"></i> Home</a>
-          <% } %>
-
-        <li class="nav-item">
-          <% if (title == "Order") { %>
-          <a class="nav-link active" aria-current="page" href="/order"><i class="fa-solid fa-lg fa-book"></i> Order</a>
-          <% } else { %>
-            <a class="nav-link" aria-current="page" href="/order"><i class="fa-solid fa-lg fa-book"></i> Order</a>
-          <% } %>
+        <% if (user) { %>
+          <!-- Logged-in user links -->
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Home' ? 'active' : '' %>" href="/home">
+              <i class="fa-solid fa-lg fa-house"></i> Home
+            </a>
           </li>
-
-        </li>
-        <li class="nav-item">
-        <% if (title == "About") { %>
-          <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Order' ? 'active' : '' %>" href="/order">
+              <i class="fa-solid fa-lg fa-book"></i> Order
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'About' ? 'active' : '' %>" href="/about">
+              <i class="fa-solid fa-lg fa-circle-info"></i> About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Contact us' ? 'active' : '' %>" href="/contactus">
+              <i class="fa-solid fa-lg fa-phone"></i> Contact Us
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="/users/logout">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+          </li>
         <% } else { %>
-          <a class="nav-link" aria-current="page" href="/about"><i class="fa-solid fa-lg fa-circle-info"></i> About</a>
+          <!-- Not logged-in -->
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Login' ? 'active' : '' %>" href="/users/login">
+              <i class="fa-solid fa-right-to-bracket"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Register' ? 'active' : '' %>" href="/users/register">
+            </a>
+          </li>
         <% } %>
-        </li>
 
-        <li class="nav-item">
-          <% if (title == "Contact us") { %>
-          <a class="nav-link active" aria-current="page" href="/contactus"><i class="fa-solid fa-lg fa-phone"></i> Contact Us</a>
-        <% } else { %>
-          <a class="nav-link" aria-current="page" href="/contactus"><i class="fa-solid fa-lg fa-phone"></i> Contact Us</a>
-          <% } %>
-        </li>
-            <li class="nav-item">
-          <% if (title == "Login") { %>
-          <a class="nav-link active" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket"></i> login</a>
-        <% } else { %>
-          <a class="nav-link" aria-current="page" href="/login"><i class="fa-solid fa-right-to-bracket"></i>></i> Login </a>
-          <% } %>
-
- 
-        </li>
-
+      </ul>
     </div>
   </div>
 </nav>

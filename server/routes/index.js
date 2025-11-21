@@ -47,11 +47,24 @@ router.get('/login', function(req, res, next) {
   });
 });
 
+router.post('/login', (req, res, next) => {
+  res.send('Login form submitted');
+});
+
+router.get('/logout', (req, res, next) => {
+  res.redirect('/');
+});
+
 router.get('/register', function(req, res, next) {
   res.render('auth/register', { 
     title: 'Register', displayName: req.user ? req.user.displayName : ''
   });
 });
+
+router.post('/register', (req, res, next) => {
+  res.send('Registration form submitted');
+});
+
 
 
 module.exports = router;

@@ -3,7 +3,35 @@ const router = express.Router();
 const passport = require('passport');
 const User = require('../models/user').User;
 
-// Register page
+// GET Login Page
+router.get('/login', (req, res) => {
+  if (!req.user) {
+    res.render('auth/login', { 
+      title: 'Login',
+      message: req.flash('loginMessage')
+    });
+  } else {
+    res.redirect('/');
+  }
+});
+
+// POST Login
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', (err, user, info) => {
+    if (err) return next(err);
+    if (!user) {
+      req.flash('loginMessage', 'Authentication Error');
+      return res.redirect('/users/login');
+    }
+    req.login(user, (err) => {
+      if (err) return next(err);
+      req.session.user = { username: user.username, displayName: user.displayName }; 
+      return res.redirect('/books');
+    });
+  })(req, res, next);
+});
+
+// GET Register Page
 router.get('/register', (req, res) => {
   if (!req.user) {
     res.render('auth/register', {
@@ -15,6 +43,7 @@ router.get('/register', (req, res) => {
   }
 });
 
+// POST Register
 router.post('/register', (req, res, next) => {
   let newUser = new User({
     username: req.body.username,
@@ -31,44 +60,20 @@ router.post('/register', (req, res, next) => {
         title: 'Register',
         message: req.flash('registerMessage')
       });
-    } else {
-      passport.authenticate('local')(req, res, () => {
-        res.redirect("/books");
-      });
     }
+    passport.authenticate('local')(req, res, () => {
+      req.session.user = { username: newUser.username, displayName: newUser.displayName }; 
+      res.redirect("/books");
+    });
   });
 });
 
-// Login page
-router.get('/login', (req, res) => {
-  if (!req.user) {
-    res.render('auth/login', { 
-      title: 'Login',
-      message: req.flash('loginMessage')
-    });
-  } else {
-    res.redirect('/');
-  }
-});
-
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
-    if (err) return next(err);
-    if (!user) {
-      req.flash('loginMessage', 'Authentication Error');
-      return res.redirect('/users/login');
+router.get('/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      console.log(err);
+      return res.redirect('/');
     }
-    req.login(user, (err) => {
-      if (err) return next(err);
-      return res.redirect('/books');
-    });
-  })(req, res, next);
-});
-
-// Logout
-router.get('/logout', (req, res, next) => {
-  req.logout(err => {
-    if (err) return next(err);
     res.redirect('/');
   });
 });

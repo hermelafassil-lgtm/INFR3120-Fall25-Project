@@ -16,4 +16,8 @@ GitHub link - https://github.com/hermelafassil-lgtm/INFR3120-Fall25-Project
 
 Render link- https://infr3120-fall25-project-0c7j.onrender.com/
 
-Youtube Link - 
+Youtube Link - https://www.youtube.com/watch?v=PhnyHF6e3mc
+
+
+--------------------------------------- Part 2 Updates ---------------------------
+https://fontawesome.com/icons/right-to-bracket?f=classic&s=solid

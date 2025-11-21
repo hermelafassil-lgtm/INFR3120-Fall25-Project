@@ -11,7 +11,6 @@ function requireAuth(req,res,next)
     }
     next();
 }
-// GET route for displaying the data from DB --> Read Operation
 router.get('/',async(req,res,next)=>{
     try{
         const BookList = await Book.find();
@@ -31,7 +30,7 @@ router.get('/',async(req,res,next)=>{
         )
     }
 });
-// GET route for displaying the Add Page --> Create Operation
+
 router.get('/add',async(req,res,next)=>{
     try
     {
@@ -50,7 +49,6 @@ router.get('/add',async(req,res,next)=>{
         )
     }
 })
-// POST route for processing the Add Page --> Create Operation
 router.post('/add',async(req,res,next)=>{
     try
     {
@@ -75,7 +73,6 @@ router.post('/add',async(req,res,next)=>{
         )
     }
 })
-// GET route for displaying the Edit Page --> Update Operation
 router.get('/edit/:id',async(req,res,next)=>{
     try
     {
@@ -95,7 +92,6 @@ router.get('/edit/:id',async(req,res,next)=>{
         next(err);
     }
 })
-// POST route for processing the Edit Page --> Update Operation
 router.post('/edit/:id',async(req,res,next)=>{
     try{
         let id = req.params.id;
@@ -118,7 +114,6 @@ router.post('/edit/:id',async(req,res,next)=>{
     }
 
 })
-// GET route to perform Delete Operation
 router.get('/delete/:id',async(req,res,next)=>{
     try{
         let id = req.params.id;

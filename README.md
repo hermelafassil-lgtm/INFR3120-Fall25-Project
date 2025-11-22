@@ -20,7 +20,7 @@ Youtube Link - https://www.youtube.com/watch?v=PhnyHF6e3mc
 
 
 --------------------------------------- Part 2 Updates ---------------------------
-
+Munib Ahmed Sheikh – CRUD Authentication.zip (Lecture 10)
 main_nav.ejs Login logo - https://fontawesome.com/icons/right-to-bracket?f=classic&s=solid
 main_nave.ejs Logout logo https://fontawesome.com/icons/arrow-up-right-from-square?f=classic&s=solid
 https://expressjs.com/en/resources/middleware/cookie-session.html

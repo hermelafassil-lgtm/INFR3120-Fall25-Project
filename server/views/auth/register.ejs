@@ -13,33 +13,45 @@
     <%}%>
     <div class="row">
         <div class="offset-md-4 col-md-4">
-            <!-- Asks the User to login -->
+             <!-- Asks the User to Register -->
             <h1>Register here</h1>
             <form method="post" autocomplete="off">
                 <fieldset class="form-group">
+                    <!-- Asks the User for a  username -->
                     <label for="username"></label>
-                     <!-- Asks the User for a  username -->
-                    <input type="text" class="form-control"name="username"placeholder="Enter username"id="username" required autofocus>
+                    <input type="text" class="form-control"
+                    name="username"
+                    placeholder="Enter username"
+                    id="username" required autofocus>
                 </fieldset>
                 <fieldset class="form-group">
+                    <!-- Asks the User for a password -->
                     <label for="password"></label>
-                     <!-- Asks the User for a  passowrd -->
-                    <input type="password" class="form-control"name="password"placeholder="Enter password"id="password" required>
+                    <input type="password" class="form-control"
+                    name="password"
+                    placeholder="Enter password"
+                    id="password" required>
                 </fieldset>
                 <fieldset class="form-group">
+                    <!-- Asks the User for a  email -->
                     <label for="email"></label>
-                     <!-- Asks the User for a email -->
-                    <input type="email" class="form-control"name="email"placeholder="Enter your email"id="email" required>
+                    <input type="email" class="form-control"
+                    name="email"
+                    placeholder="Enter your email"
+                    id="email" required>
                 </fieldset>
                 <fieldset class="form-group">
                     <label for="displayName"></label>
-                    <input type="displayName" class="form-control"name="displayName"placeholder="Enter your displayName"id="displayName" required>
+                    <input type="displayName" class="form-control"
+                    name="displayName"
+                    placeholder="Enter your displayName"
+                    id="displayName" required>
                 </fieldset>
                 <fieldset class="form-group text-right">
                     <!-- Creates a button login when the user in registering and submits -->
                     <input type="submit" class="btn btn-success" value="Register">
                     <a href="/"></a>
-                    <!-- Creates a button cancel when the user in registering and preses cancel-->
+                    <!-- Creates a button login when the user in registering and cancels -->
                     <input type="button" class="btn btn-warning" value="Cancel">
                     <a href="/"></a>
                 </fieldset>

@@ -11,42 +11,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto ms-2 mb-lg-0">
 
+  
         <!--If statment for what the user can shee when logged in   -->
         <% if (user) { %>
-          <!-- Logged-in user link for home page  only shows when the user is loged in-->
-          <li class="nav-item"><a class="nav-link <%= title === 'Home' ? 'active' : '' %>" href="/home"><i class="fa-solid fa-lg fa-house"></i> Home
+          <!-- Logged-in user links -->
+          <li class="nav-item">
+            <!-- Logged-in user link for home page only shows when the user is loged in-->
+            <a class="nav-link <%= title === 'Home' ? 'active' : '' %>" href="/home">
+              <i class="fa-solid fa-lg fa-house"></i> Home
             </a>
           </li>
-          
-          <!-- Logged-in user link for Order page only shows when the user is loged in-->
-          <li class="nav-item"><a class="nav-link <%= title === 'Order' ? 'active' : '' %>" href="/order"> <i class="fa-solid fa-lg fa-book"></i> Order
+          <!-- Logged-in user link for order page  only shows when the user is loged in-->
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Order' ? 'active' : '' %>" href="/order">
+              <i class="fa-solid fa-lg fa-book"></i> Order
             </a>
           </li>
-
-          <!-- Logged-in user link for home page  only shows when the user is loged in-->
-          <li class="nav-item"><a class="nav-link <%= title === 'About' ? 'active' : '' %>" href="/about">
+          <li class="nav-item">
+            <!-- Logged-in user link for contact us page  only shows when the user is loged in-->
+            <a class="nav-link <%= title === 'About' ? 'active' : '' %>" href="/about">
               <i class="fa-solid fa-lg fa-circle-info"></i> About
             </a>
           </li>
-
           <!-- Logged-in user link for contact us page  only shows when the user is loged in-->
-          <li class="nav-item"><a class="nav-link <%= title === 'Contact us' ? 'active' : '' %>" href="/contactus">
+          <li class="nav-item">
+            <a class="nav-link <%= title === 'Contact us' ? 'active' : '' %>" href="/contactus">
               <i class="fa-solid fa-lg fa-phone"></i> Contact Us
             </a>
           </li>
-
           <!-- Logged-in user link for Logout page  only shows when the user is loged in-->
-          <li class="nav-item"><a class="nav-link text-danger" href="/users/logout">
-             <i class="fa-solid fa-arrow-up-right-from-square"></i> Logout
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="/users/logout">
+              <i class="fa-solid fa-right-from-bracket"></i> Logout
             </a>
           </li>
-
         <!-- Else statment for when the user is not logedin -->
         <% } else { %>
           <!-- Not logged-in -->
           <li class="nav-item">
             <!-- Log in  user link for Login page  only shows when the user is loged out-->
-            <a class="nav-link <%= title === 'Login' ? 'active' : '' %>" href="/users/login"><i class="fa-solid fa-right-to-bracket"></i> Login
+            <a class="nav-link <%= title === 'Login' ? 'active' : '' %>" href="/users/login">
+              <i class="fa-solid fa-right-to-bracket"></i> Login
             </a>
           </li>
           <li class="nav-item">

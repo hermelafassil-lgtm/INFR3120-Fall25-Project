@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<%- include('../partials/main_nav') %>
+
+<h1><%= title %></h1>
+
+<form action="/orders/create" method="POST">
+
+    <label>Choose your dish:</label>
+    <input type="radio" name="dish" value="Pasta A" required> Pasta A
+    <input type="radio" name="dish" value="Pasta B"> Pasta B
+    <input type="radio" name="dish" value="Pasta C"> Pasta C
+
+    <br><br>
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity" required>
+
+    <br><br>
+
+    <label>Special Instructions:</label>
+    <textarea name="instructions"></textarea>
+
+    <br><br>
+
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Phone:</label>
+    <input type="tel" name="phone" required>
+
+    <br><br>
+
+    <button type="submit">Place Order</button>
+</form>
+
+<%- include('../partials/footer') %>

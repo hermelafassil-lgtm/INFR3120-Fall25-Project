@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+<%- include('../partials/main_nav') %>
+
+<h1>Edit Order</h1>
+
+<form action="/orders/edit/<%= order._id %>" method="POST">
+
+    <label>Dish:</label>
+    <input type="text" name="dish" value="<%= order.dish %>" required>
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity" value="<%= order.quantity %>" required>
+
+    <label>Special Instructions:</label>
+    <textarea name="instructions"><%= order.instructions %></textarea>
+
+    <label>Your Name:</label>
+    <input type="text" name="name" value="<%= order.name %>" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" value="<%= order.email %>" required>
+
+    <label>Phone:</label>
+    <input type="tel" name="phone" value="<%= order.phone %>" required>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+<%- include('../partials/footer') %>

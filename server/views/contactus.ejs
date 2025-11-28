@@ -1,0 +1,159 @@
+<!-- Includes the site Header -->
+<%-include ./partials/header.ejs %>
+
+<!-- Includes the site main navigation -->
+<%-include ./partials/main_nav.ejs %>
+
+<!-- Css style specific to the Contact page -->
+<style>
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  body {
+    padding-bottom: 90px;  
+  }
+
+  /* Contact hero card matches Home design */
+  .contact-card {
+    border-radius: 200px;
+    background: linear-gradient(135deg, #158808, #fff);
+    width: 600px;
+    padding: 30px;
+    color: #000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border: 0;
+  }
+
+  .contact-card img {
+    width: 350px;
+    height: 160px;
+    object-fit: cover;
+    border: 10px solid black;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Contact page form styling */
+  .contact-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.10);
+  }
+
+  .small-button {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
+
+<!-- Hero card (matches Home layout) -->
+<div class="d-flex justify-content-center mt-3 mb-3">
+  <div class="card text-center contact-card">
+    <img src="/Asset/images/Casa_Di_pasta.png" alt="Contact Casa Di Pasta">
+
+    <h2 class="mt-3 mb-0 text-light">Contact Casa Di Pasta</h2>
+
+    <div class="mt-3 mb-3 text-light text-start" style="max-width:300px; margin:0 auto;">
+      <p class="d-flex align-items-center mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="22" height="22" class="me-2 Location-icon">
+          <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+        </svg>
+        Ontario, Oshawa, Canada
+      </p>
+    </div>
+
+    <div class="mb-1">
+      <a href="https://www.google.com/maps/place/2000+Simcoe+St+N,+Oshawa,+ON+L1H+7K4/@43.9431702,-78.8986338,16z/data=!3m1!4b1!4m6!3m5!1s0x89d51b8e271c4e61:0xb17dbf5319f89dc7!8m2!3d43.9431702!4d-78.8986338!16s%2Fg%2F1hc2bpcbt?entry=ttu&g_ep=EgoyMDI1MTExMi4wIKXMDSoASAFQAw%3D%3D" 
+         class="btn btn-sm btn-outline-light me-2">Find us on Maps</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Contact Content -->
+<div class="container my-5">
+
+  <div class="row g-4">
+
+    <!-- Contact Info -->
+    <div class="col-md-5">
+      <div class="contact-box">
+        <h3 class="mb-3">
+          <i class="fa-solid fa-location-dot"></i> Visit Us
+        </h3>
+
+        <p><strong>Address:</strong><br>2000 Simcoe St N, Oshawa, Ontario</p>
+
+        <hr>
+
+        <h5><i class="fa-solid fa-phone"></i> Phone</h5>
+        <p>(647) 444-5555</p>
+
+        <hr>
+
+        <h5><i class="fa-solid fa-envelope"></i> Email</h5>
+        <p>support@casadipasta.com</p>
+
+        <hr>
+
+        <h5><i class="fa-solid fa-clock"></i> Hours</h5>
+        <p>
+          Mon – Sat: 11 AM – 10 PM <br>
+          Sunday: Closed
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-7">
+      <div class="contact-box">
+
+        <h3 class="mb-3"><i class="fa-solid fa-message"></i> Send Us a Message</h3>
+
+        <form>
+
+          <div class="mb-3">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Your Email</label>
+            <input type="email" class="form-control" placeholder="yourname@gmail.com" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Review</label>
+            <textarea class="form-control" rows="5" placeholder="Leave Your Message..." required></textarea>
+          </div>
+
+          <button class="btn btn-primary w-100">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Includes the footer -->
+<%-include ./partials/footer.ejs %>

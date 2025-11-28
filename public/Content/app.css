@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #b7c2ac, #e6e6e6);
+    /* or a softer gradient */
+    /* background: linear-gradient(to bottom, #fafafa, #dcdcdc); */
+
+    background-attachment: fixed; /* keeps the gradient still while scrolling */
+    font-family: Arial, sans-serif;
+}

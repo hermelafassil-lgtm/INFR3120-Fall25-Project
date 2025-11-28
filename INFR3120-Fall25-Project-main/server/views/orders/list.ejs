@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+<%- include('../partials/main_nav') %>
+
+<h1>My Orders</h1>
+
+<a href="/orders/create" class="btn btn-primary">Place New Order</a>
+
+<table border="1" cellpadding="10" style="margin-top:20px;">
+    <tr>
+        <th>Dish</th>
+        <th>Qty</th>
+        <th>Instructions</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+    </tr>
+
+    <% orders.forEach(order => { %>
+        <tr>
+            <td><%= order.dish %></td>
+            <td><%= order.quantity %></td>
+            <td><%= order.instructions %></td>
+            <td><%= order.name %></td>
+            <td><%= order.email %></td>
+            <td><%= order.phone %></td>
+
+            <td>
+                <a href="/orders/edit/<%= order._id %>">Edit</a>
+                |
+                <a href="/orders/delete/<%= order._id %>" onclick="return confirm('Delete this order?')">Delete</a>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+
+<%- include('../partials/footer') %>

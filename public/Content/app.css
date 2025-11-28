@@ -3,9 +3,8 @@ body {
     padding: 0;
     /*Adds  a lineear gradent to the bottom */
     background: linear-gradient(to bottom, #b7c2ac, #e6e6e6);
-    /* or a softer gradient */
-    /* background: linear-gradient(to bottom, #fafafa, #dcdcdc); */
 
-    background-attachment: fixed; /* keeps the gradient still while scrolling */
+    /* keeps the gradient still while scrolling */
+    background-attachment: fixed; 
     font-family: Arial, sans-serif;
 }

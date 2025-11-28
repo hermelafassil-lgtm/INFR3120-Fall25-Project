@@ -1,27 +1,35 @@
 <%- include('../partials/header') %>
 <%- include('../partials/main_nav') %>
 
-<!-- HERO SECTION (matches Contact / About pages) -->
+<!--  Hero section (same style used on Contact/About) 
+  Shows the logo + tagline + location -->
 <div class="d-flex justify-content-center mt-4 mb-4">
   <div class="card text-center home-card">
+
+      <!-- Logo -->
       <img src="/Asset/images/Casa_Di_pasta.png"
            alt="Everything Fresh, Truly Italian">
 
-      <h2 class="mt-3 mb-0 text-light">Everything Fresh, Truly Italian</h2>
+      <!-- Tagline text -->
+      <h2 class="mt-3 mb-0 text-light">
+          Everything Fresh, Truly Italian
+      </h2>
 
-        <div class="mt-3 mb-3 text-light text-start"
-
+      <!-- Location with little pin icon -->
+      <div class="mt-3 mb-3 text-light text-start"
            style="max-width:300px; margin:0 auto;">
+
           <p class="d-flex align-items-center mb-0">
               <svg xmlns="http://www.w3.org/2000/svg" 
                    viewBox="0 0 640 640" width="22" height="22"
                    class="me-2 Location-icon">
-                <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 
-                         512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 
-                         582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 
-                         371.9 127.9 252.6zM320 320C355.3 320 384 291.3 
-                         384 256C384 220.7 355.3 192 320 192C284.7 192 
-                         256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+                <path d="M128 252.6C128 148.4 214 64 320 64C426 64 
+                         512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 
+                         569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 
+                         514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 
+                         384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 
+                         192 256 220.7 256 256C256 291.3 284.7 320 320 
+                         320z"/>
               </svg>
               Ontario, Oshawa, Canada
           </p>
@@ -29,8 +37,7 @@
   </div>
 </div>
 
-<!-- ORDER FORM -->
-
+<!-- Styles for this page only -->
 <style>
     .order-container {
         max-width: 700px;
@@ -49,6 +56,7 @@
         color: #2f3b28;
     }
 
+    /* Basic label styling */
     label {
         font-weight: 600;
         display: block;
@@ -56,6 +64,7 @@
         margin-bottom: 5px;
     }
 
+    /* All inputs look consistent */
     input[type="text"],
     input[type="email"],
     input[type="tel"],
@@ -74,6 +83,7 @@
         resize: none;
     }
 
+    /* Radio buttons line up nicely */
     .radio-group label {
         display: flex;
         align-items: center;
@@ -81,6 +91,7 @@
         font-weight: 500;
     }
 
+    /* Submit button styling */
     .submit-btn {
         margin-top: 25px;
         width: 100%;
@@ -99,12 +110,16 @@
     }
 </style>
 
+<!-- Order form section -->
 <div class="order-container">
 
+    <!-- Dynamic page title -->
     <h1><%= title %></h1>
 
+    <!-- Actual form that creates the order -->
     <form action="/orders/create" method="POST">
 
+        <!-- Dish selection -->
         <label>Choose your dish:</label>
         <div class="radio-group">
             <label><input type="radio" name="dish" value="Pasta A" required> Pasta A</label>
@@ -112,12 +127,15 @@
             <label><input type="radio" name="dish" value="Pasta C"> Pasta C</label>
         </div>
 
+        <!-- Quantity field -->
         <label>Quantity:</label>
         <input type="number" name="quantity" required min="1">
 
+        <!-- Extra notes -->
         <label>Special Instructions:</label>
         <textarea name="instructions"></textarea>
 
+        <!-- Customer details -->
         <label>Your Name:</label>
         <input type="text" name="name" required>
 
@@ -127,6 +145,7 @@
         <label>Phone:</label>
         <input type="tel" name="phone" required>
 
+        <!-- Submit -->
         <button class="submit-btn" type="submit">Place Order</button>
     </form>
 
